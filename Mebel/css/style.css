@@ -1074,6 +1074,26 @@ body.ie ._ibg img {
   padding-bottom: 0px;
 }
 
+@-webkit-keyframes circle {
+  0% {
+    top: -100px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes circle {
+  0% {
+    top: -100px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
 .header__fixed_back {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.8);
@@ -1087,6 +1107,26 @@ body.ie ._ibg img {
   top: 0;
   width: 100%;
   z-index: 13;
+}
+
+@-webkit-keyframes circle2 {
+  0% {
+    top: 0px;
+  }
+
+  100% {
+    top: -100px;
+  }
+}
+
+@keyframes circle2 {
+  0% {
+    top: 0px;
+  }
+
+  100% {
+    top: -100px;
+  }
 }
 
 .header__menu {
