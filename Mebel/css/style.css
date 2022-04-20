@@ -1749,10 +1749,8 @@ h3 {
   left: -80px;
 }
 
-._no-webp .full-cycle{
-  background: url("../img/back2.png") 100% no-repeat; }
-
 .full-cycle {
+  background: url("../img/back2.webp") 100% no-repeat;
   background-color: rgba(0, 0, 0, 0.85) !important;
 }
 
@@ -3014,5 +3012,3 @@ h3 {
 ._webp .header__fixed{ background: url(../img/back.webp) 100%/100% no-repeat; }
 
 ._webp .menu__body{ background: url(../img/back3.webp); }
-
-._webp .full-cycle{ background: url(../img/back2.webp) 100% no-repeat; }

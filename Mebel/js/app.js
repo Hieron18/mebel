@@ -1298,7 +1298,7 @@ let images = document.querySelectorAll('.tabs-block_load');
 const options = {
 	root: null,
 	rootMargin: '0px',
-	threshold: 0.1
+	threshold: 1
 }
 
 function handleImg(myImg, observe) {
