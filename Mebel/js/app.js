@@ -117,6 +117,102 @@ let slider_about = new Swiper('.slider__body', {
 	//},
 });
 
+let slider__product2 = new Swiper('.product__slide2', {
+	// effect: 'fade',
+	// autoplay: {
+	// 	delay: 3000,
+	// 	disableOnInteraction: false,
+	// },
+	direction: "vertical",
+	slidesPerView: 3,
+	//touchRatio: 0,
+	//simulateTouch: false,
+	//preloadImages: false,
+	// lazy: true,
+	// Dotts
+	//pagination: {
+	//	el: '.slider-quality__pagging',
+	//	clickable: true,
+	//},
+	// Arrows
+	// navigation: {
+	// 	nextEl: '.swiper-button-next',
+	// 	prevEl: '.swiper-button-prev',
+	// },
+	breakpoints: {
+		320: {
+			direction: "horizontal",
+		},
+		767: {
+				direction: "vertical",
+		}
+	},
+	// on: {
+	// 	lazyImageReady: function () {
+	// 		ibg();
+	// 	},
+	// }
+	// And if we need scrollbar
+	//scrollbar: {
+	//	el: '.swiper-scrollbar',
+	//},
+});
+
+let slider__product = new Swiper('.product__slide', {
+	// effect: 'fade',
+	// autoplay: {
+	// 	delay: 3000,
+	// 	disableOnInteraction: false,
+	// },
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1,
+	spaceBetween: 0,
+	autoHeight: true,
+	speed: 800,
+	//touchRatio: 0,
+	//simulateTouch: false,
+	loop: true,
+	//preloadImages: false,
+	// lazy: true,
+	// Dotts
+	//pagination: {
+	//	el: '.slider-quality__pagging',
+	//	clickable: true,
+	//},
+	// Arrows
+	navigation: {
+		nextEl: '.product__but-next',
+		prevEl: '.product__but-prev',
+	},
+	// breakpoints: {
+	// 	320: {
+	// 		slidesPerView: 2,
+	// 		spaceBetween: 5,
+	// 		autoHeight: true,
+	// 	},
+	// 	768: {
+	// 		slidesPerView: 3,
+	// 		spaceBetween: 0,
+	// 	},
+	// 	992: {
+	// 		slidesPerView: 4,
+	// 		spaceBetween: 20,
+	// 	},
+	// },
+	thumbs: {
+		swiper: slider__product2,
+	 },
+	on: {
+		lazyImageReady: function () {
+			ibg();
+		},
+	}
+	// And if we need scrollbar
+	//scrollbar: {
+	//	el: '.swiper-scrollbar',
+	//},
+});
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -931,7 +1027,7 @@ let circles = document.querySelector('.factory__backgr img');
 let circles_2 = document.querySelector('.full-cycle__images');
 
 
-       
+   
 body.addEventListener('mousemove', function(evt){
 	var posX = (0 - evt.clientX / w * startX)
    var posY = (0 - evt.clientY / h * startY)
@@ -940,10 +1036,11 @@ body.addEventListener('mousemove', function(evt){
    circles.style.position = 'absolute';
    circles.style.left = posX + 'px';
    circles.style.top = posY + 'px';
-
-	circles_2.style.position = 'relative';
-   circles_2.style.left = posX2 + 'px';
-   circles_2.style.top = posY2 + 'px';
+	if(circles_2){
+		circles_2.style.position = 'relative';
+   	circles_2.style.left = posX2 + 'px';
+   	circles_2.style.top = posY2 + 'px';
+	}
 })
 
 
@@ -983,10 +1080,12 @@ const headerContent = document.querySelector(".header");
 })
 
 let cookie = document.querySelector('.cookie__button');
-cookie.addEventListener('click', function(){
-	let main = document.querySelector('.cookie');
-	main.style.display = "none";
-});
+if(cookie){
+	cookie.addEventListener('click', function(){
+		let main = document.querySelector('.cookie');
+		main.style.display = "none";
+	});
+}
 
 //ScrollOnScroll
 window.addEventListener('scroll', scroll_scroll);
@@ -2045,8 +2144,10 @@ menu.addEventListener('click', function(){
 
 let cook = document.querySelector('.cookie');
 let up = document.querySelector('.upwards');
-if(cook.classList.contains('_active')){
-   up.classList.add('_active')
+if(cook){
+   if(cook.classList.contains('_active')){
+      up.classList.add('_active')
+   }
 }
 
 const anchors = document.querySelectorAll('a[href*="#top"]')
