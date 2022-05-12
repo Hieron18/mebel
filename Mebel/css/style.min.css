@@ -1356,8 +1356,10 @@ body.ie ._ibg img {
 .product__slide {
   width: 430px;
   height: 430px;
+  overflow:hidden;
 }
 .product__slide .product__slider img {
+  overflow: hidden;
   object-fit: cover;
   width: 100%;
   height: 100%;
